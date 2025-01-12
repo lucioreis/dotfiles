@@ -1,0 +1,32 @@
+-- bootstrap lazy.nvim, LazyVim and your plugins
+require("config.lazy")
+
+-- /home/lucio/Downloads
+-- vim.keymap.set("n", "xf", function()
+--   vim.cmd([[ source %]])
+--   vim.notify("Sourced file " .. vim.fn.expand("%:t"), vim.log.levels.INFO)
+-- end)
+--
+-- vim.keymap.set("", "<c-x>", function()
+--   vim.cmd([[ .lua]])
+-- end)
+--
+-- vim.keymap.set("v", "<c-x>", function()
+--   vim.cmd([[ '<,'>lua]])
+--   vim.notify("Sourced selection of " .. vim.fn.expand("%:t"), vim.log.levels.INFO)
+-- end)
+
+-- {
+--   anchor = "/home/lucio/.config/lazyvim",
+--   bookmarks = {},
+--   branch = { "/home/lucio/.config/lazyvim", "/home/lucio/.config/lazyvim/init.lua" },
+--   depth_focus = 1,
+--   target_window = 1000,
+--   windows = { {
+--       path = "/home/lucio/.config/lazyvim",
+--       win_id = 1046
+--     }, {
+--       path = "/home/lucio/.config/lazyvim/init.lua",
+--       win_id = 1047
+--     } }
+-- }

@@ -1,0 +1,1361 @@
+nushell
+nu --help
+nu --lsp
+exit
+config nu
+$env.EDITOR="NVIM_APPNAME=lazyvim /bin/nvim"
+$env.EDITOR="$env.NVIM_APPNAME=lazyvim /bin/nvim"
+$env.EDITOR=$env.NVIM_APPNAME=lazyvim /bin/nvim
+$env.EDITOR="$env.NVIM_APPNAME=lazyvim /bin/nvim"
+$env.NVIM_APPNAME=lazyvim
+let
+let NVIM_APPNAME = "lazyvim"
+def nvim [] {}
+def nvim [] {<\n>let NVIM_APPNAME = "lazyvim"<\n>/bin/nvim<\n>}
+nvim
+let --help
+global
+nu --help
+def nvim [] {<\n>env NVIM_APPNAME=lazyvim /bin/nvim<\n>}
+nvim
+alias --help
+alias nvim = env NVIM_APPNAME=lazyvim nvim
+nvim
+command -v alias
+where --help
+which alias
+which nvim
+which ls
+ls | where type == "file"
+ls | where type == "file" | select name
+ls | where type == "file" | select name | fzf
+ls | where type == "file" | select name | to text 
+ls | where type == "file" | select name | to csv 
+ls | where type == "file" | select name | to csv | fzf
+ls | where type == "file" | select name | to csv | fzf | nvim
+exit
+nvim
+ls | where type == "file" | select name | to csv | fzf | nvim
+exit
+nu config
+env NVIM_APPNAME=lazyvim nvim
+config nu
+$env.EDITOR="nvim"
+$env.EDITOR=nvim
+env EDITOR nvim
+env EDITOR=nvim
+config nu
+alias nvim = env NVIM_APPNAME=lazyvim nvim
+config nu
+alias nvim = env NVIM_APPNAME=lazyvim /bin/nvim
+config nu
+env EDITOR=env NVIM_APPNAME=lazyvim /bin/nvim
+config nu
+$env.config.buffer_editor = 'nvim'
+config nu
+$env.config.buffer_editor = 'NVIM_APPNAME=lazyvim nvim'
+config nu
+$env.config.buffer_editor = 'env NVIM_APPNAME=lazyvim nvim'
+config nu
+def nvim [] {<\n>env NVIM_APPNAME=lazyvim<\n>/bin/nvim<\n>}
+which nvim
+nvim
+env
+def nvim [] {<\n>env NVIM_APPNAME=lazyvim /bin/nvim<\n>}
+nvim
+$env.config.buffer_editor = 'nvim'
+config nu
+exit
+config nu
+def lvim [...args: string] {<\n>env NVIM_APPNAME=lazyvim<\n>nvim args<\n>}
+lvim .
+def lvim [...args: string] {<\n>env NVIM_APPNAME=lazyvim<\n>nvim $args<\n>}
+lvim
+def lvim [...args: string] {<\n>env NVIM_APPNAME=lazyvim<\n>nvim ...$args<\n>}
+lvim
+def lvim [...args: string] {<\n>env NVIM_APPNAME=lazyvim<\n>/bin/nvim ...$args<\n>}
+lvim
+env NVIM_APPNAME
+def lvim [...args: string] {<\n>env NVIM_APPNAME="lazyvim"<\n>/bin/nvim ...$args<\n>}
+lvim
+help env
+help
+help --find env
+config env
+def lvim [...args: string] {<\n>$env.NVIM_APPNAME="lazyvim"<\n>/bin/nvim ...$args<\n>}
+lvim
+def lvim [...args: string] {<\n>$env.NVIM_APPNAME=lazyvim<\n>/bin/nvim ...$args<\n>}
+lvim
+$env.FOO = "TESTE"
+FOO
+$env.FOO
+$env.NVIM_APPNAME="lazyvim"
+$env.FOO_FOO="teste~<\n>"
+$env.FOO\_FOO="teste"
+nvim
+$env."NVIM_APPNAME"=lazyvim
+$env.{NVIM_APPNAME=lazyvim}
+env --help
+$env.TESTING_UNDERSCORE=testing
+$env.TESTING_UNDERSCORE='testing'
+$env.TESTING_UNDERSCORE = 'testing'
+$env.TESTING_UNDERSCORE
+$env.NVIM_APPNAME = "lazyvim"
+nvim
+config nu
+$env.config.buffer_editor = 'nvim'
+config nu
+exit
+nvim
+config nu
+exit
+nvim
+config nu
+exit
+nvim
+exit
+config nu
+nvim .config/nushell/config.nu
+exit
+nvim .config/nushell/config.nu
+exit
+nvim
+advim 
+nvim
+config nu
+nvim | describe
+ls | where type == "file" | get name
+ls | where type == "file" | get name | to text 
+ls | where type == "file" | get name | to text | fzf | nvim
+exit
+nvim
+config nu
+config nu 
+exit
+config nu
+nvim
+nvim .config/nushell/config.nu
+/bin/ls
+/bin/ls | to_csv
+/bin/ls | to csv
+nvim
+nvim delme.nu
+exit
+nvim delme.nu
+char esep
+char bl
+char --help
+char prompt
+char --list
+z go/src/ankigo/
+cd go/src/ankigo/
+ls
+cat .config/nushell/env.nu
+help config env
+config env --doc | nu-highlight
+config env --doc | nu-highlight | less -R
+$rnv
+$env
+ls | explore
+explore --help
+ls | explore --peek
+$nu | explore --peek
+try
+$nu | try
+$nu | explore --peek
+explore
+ls o> /dev/stdout
+ls o> test.txt
+ls | to text | o> test.txt
+ls | to text | echo o> test.txt
+cat test.txt
+ls | to text
+ls | to text | echo
+ls | to text | print
+ls | to text | print o> test.txt
+cat test.txt
+rm test.txt
+cat test.sh
+firefox | ignore
+config nu
+nvim
+z 
+zoxide init nushell
+$nu.env-path
+cd ~/.config/nushell/
+ls
+mkdir conf.d
+zoxide init nushell | save -f conf.d/zoxide.nu
+cat conf.d/zoxide.nu
+print $nu.config-path
+print $nu.home-path
+print $nu.data-dir
+print $nu.default-config-dir
+source $"($nu.default-config-dir)/conf.d/zoxide.nu"
+z
+exit
+ls
+tee --help
+http get cht.sh/go/for
+http get https://cht.sh/go/for
+http get https://cht.sh/go/for?T
+http --help
+^http get https://cht.sh/go/for?T
+^http get http://cht.sh/go/for?T
+http get http://cht.sh/go/for?T
+http get --help
+http get -r http://cht.sh/go/for?T
+^http get http://cht.sh/go/for?T
+^http get http://cht.sh/go/for?T -b
+^http get http://cht.sh/go/for?T -b | strip (newline)
+^http get http://cht.sh/go/for?T -b | strip nl
+^http get http://cht.sh/go/for?T -b | strip 
+^http get http://cht.sh/go/for?T -b | strip (char newline)
+"er\nfdjfd" | strip (char newline)
+"er\nfdjfd" | str_strip (char newline)
+strip --help
+"er\nfdjfd" | lines
+^http get http://cht.sh/go/for?T -b | lines
+def chtsh [] {<\n>^http get $"http://cht.sh/($in.0)/($in.1)?T -b" | lines<\n>}
+["go" "for"] | chst 
+["go" "for"] | chtsh 
+def chtsh [] {<\n>^http get $"http://cht.sh/($in.0)/($in.1)?T -b" | lines<\n>}
+def chtsh [] {<\n>mut let i = 0<\n>^http get $"http://cht.sh/($in.($i))/($in.1)?T -b" | lines<\n>}
+def chtsh [] {<\n>let mut i = 0<\n>^http get $"http://cht.sh/($in.($i))/($in.1)?T -b" | lines<\n>}
+def chtsh [] {<\n>let i = 0<\n>^http get $"http://cht.sh/($in.($i))/($in.1)?T -b" | lines<\n>}
+help var
+help let
+help mut
+config nu
+exit
+config nu
+exit
+carapace _carapace nushell | save --force ~/.cache/carapace/init.nu
+exit
+config nu
+nvim
+config nu
+exit
+config nu
+nvim .config/nushell/config.nu
+exit
+nvim .config/nushell/config.nu
+exit
+config nu
+http get -r http://cht.sh/go/for?T
+http get -r http://cht.sh/go/for?T | get pre
+http get -r http://cht.sh/go/for?T | html2text | get pre
+http get -r http://cht.sh/go/for?T | html2text
+exit
+ls
+ls 
+ls | less -R
+ls | less 
+exi
+exit
+asdf
+exit
+ls
+z go
+z src
+ls
+z ankigo
+ls
+ls -la
+ls -la | explore
+help
+ps | where cpu > 0
+cat ~/.config/zsh/myconfig.zsh
+cat /proc/"$1"/status | grep VmRSS
+cat /proc/12/status | grep VmRSS
+cat /proc/1041/status | grep VmRSS
+top 
+ps | where cpu > 0
+ps | where mem > 1000
+ps | where mem > 1000M
+ps
+ps | get 235
+ps | where mem > 1000MiB
+ps | where mem > 100MiB
+nim
+nvim
+v
+exit
+ls
+help gn
+help |<\n>text
+cat telescope.lua
+command -v cat
+which cat
+bat telescope.lua
+ls
+help ls
+ls -m
+eog Downloads/keyboard-layout.png
+eog Downloads/keyboard-layout.jpg
+eog Pictures/keyboard-layout.png
+z ankigo
+ls
+ls -l
+ls -a
+help commands | where category==filters
+help commands | where category == filters
+help commands | where category == filters | reject category
+help commands | where category == filters | reject category command_type
+help commands | where category == filters | reject category command_type #
+help commands | where category == filters | reject category command_type description
+help commands | where category == filters | select name description
+help commands | where category == filters | select name description | fzf
+ls
+exit
+ls
+fzf
+fzf --help
+nvim
+nvim ~/.config/nushell/env.nu
+nvim ~/.config/nushell/conf.d/env.nu
+nvim ~/.config/nushell/conf.d/carapace.nu
+file --help
+exit
+carapace _carapace nushell
+char esep
+nvim ~/.config/nushell/conf.d/carapace.nu
+function nvim
+which nvim
+show nvim
+command  
+command  -v nvim
+cd
+nvim ~/.config/nushell/conf.d/carapace.nu
+cd .config/nushell/conf.d/
+ls
+cat carapace.nu
+cd ..
+cat config.nu
+help nvim
+nvim --help
+alias n = ls
+n
+alias n = $nu.env.A = queijo echo $A
+alias n = $nu.env.A = 'queijo echo $A'; echo $"($nu.env.A)"
+alias n = "A = 'queijo' echo $A"
+help alias
+help let
+help abbr
+help abbrs
+help abbr
+set
+let
+help alias
+help abbr
+let a = 1 | describe
+help describe
+sdf lsd
+10/2 | describe
+math -h
+math product [10 0.5]
+[10, 5] | math product
+[10, 0.5] | math product
+[10, 0.5] | math product | describe
+print 10/5
+let audiemce: string = 'World'
+$'Hello, ($audiemce)'
+path exists 
+path exists /
+/ | path exists
+pwd
+pwd | path exists
+date now
+date now | format date %s
+date now | format date %m
+help format date
+help date
+date humanize 
+date now | date humanize 
+"01/01/2024" | date humanize 
+"01/01/2024" | date
+"01/01/2024" | into datetime
+"01/01/2024" | into datetime | date format %d
+"01/01/2024" | into datetime | format date %d
+date now | format date %d
+"14/12/1204" | format date %d
+[31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+[31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31] | math sum 
+help math sum
+ls | get size
+ls | get size | math sum
+[31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31] | get 5
+help 
+[31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31] | get :5
+help lis
+help list
+print date now
+print $"(date now)"
+[$"(date now )", "01/01/2024"]
+[$"(date now )", "01/01/2024"] | math sum
+[$"(date now | format date %d )","12/12/2024" | format date %d ] | math sum
+[$"(date now | format date %d )",$"("12/12/2024" | format date %d)" ]
+[$"(date now | format date %d )",$"("12/12/2024" | format date %d)" ] | math sum
+[$"(date now | format date %d )",$"("12/12/2024" | format date %d)" ] | into int |  math sum
+[31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31] | range 1..5
+[31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31] | range 0..5
+[31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31] | range 1..5
+[31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31] | range 1..5 | math sum
+[31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31] | range 1..5 | math sum | [%, 15]
+[31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31] | range 1..5 | math sum | [, 15]
+[31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31] | range 1..5 | math sum | insert into [ 15]
+[31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31] | range 1..5 | math sum | insert 15
+[31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31] | range 1..5 | math sum | table 
+[31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31] | range 1..5 | math sum | table | insert 15
+[31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31] | range 1..5 | math sum | {|x| x + 15}
+[31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31] | range 1..5 | math sum | {|x| x + 15}()
+[31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31] | range 1..5 | math sum | {|x| x + 15}(%)
+[31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31] | range 1..5 | math sum | |x| x + 15
+[31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31] | range 1..5 | math sum | {|x| x + 15}.()
+[31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31] | range 1..5 | math sum | {|x| x + 15}
+[31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31] | range 1..5 | math sum | get {|x| x + 15}
+[31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31] | range 1..5 | math sum | append 15
+[31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31] | range 1..5 | math sum | append -30
+[31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31] | range 1..5 | math sum | append "-30"
+[31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31] | range 1..5 | math sum | append "-30" | math sum
+[31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31] | range 1..5 | math sum | append "-30" | math 
+[31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31] |prepend -30 | range 1..5 | math sum
+[31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31] |prepend [-30] | range 1..5 | math sum
+[31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31] |prepend [-30]
+[31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31] |prepend [-30]| range 0..5
+[31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31] |prepend [-30]| range 0..5|math sum
+nvim config.nu
+exit
+^nvim 
+which nvim
+nvim ^nvim
+which ^nvim
+let compare_closure = {|x| x > 5 }
+let original_list = [1 2 3 4 5 6  7 8 9 10]
+$original_list | filter $compare_closure
+let compare_closure = {|x| $x > 5 }
+$original_list | filter $compare_closure
+ls 
+ls | select type
+ls -l
+ls -l | exclude target
+ls -l | reject  target
+open layout.xkb | into binary 
+open layout.xkb | into binary | fist 2
+open layout.xkb | into binary | first 2
+open factorio.txt | into binary | first 2
+open factorio.txt | into binary | first 2 | print "append to " $in
+open Pictures/1_bf37-lAuwi6_Wx5-e5EJ1Q.jpeg
+kitten icat Pictures/16531598d630d07af70ea3c035220ca1_original.avif
+nvim .config/nushell/config.nu 
+exit
+nvim
+kitten
+kitten icat Pictures/1_bf37-lAuwi6_Wx5-e5EJ1Q.jpeg
+kitten icat Pictures/16531598d630d07af70ea3c035220ca1_original.avif
+kitten icat Pictures/1_bf37-lAuwi6_Wx5-e5EJ1Q.jpe
+kitten icat Pictures/1_bf37-lAuwi6_Wx5-e5EJ1Q.jpeg
+kitten icat Pictures/20.jpg
+kitty
+cd Pictures/
+ls
+nvim .
+sys --help
+sys disks
+exit
+sys net
+ls
+ls | filter {|f| f.name| str ends-with .txt}
+ls | filter {|f| $f.name | str ends-with .txt}
+ls | filter {|f| $f.name | str ends-with .json}
+open package.json
+z types
+ls
+z ankigpt/
+ls
+ls src/
+cd src/
+ls
+cd ..
+ls
+open package.json
+open package.json | get version
+open package.json | get dependencies
+cd
+nvim delme.txt
+open delme.txt
+open delme.txt | lines
+open delme.txt | lines | split column "|"
+open delme.txt | lines | split column "|" | str trim
+open delme.txt | lines | split column "|" | str trim | select column1
+open delme.txt | lines | split column "|" first_name last_name job | str trim
+ls .cache/
+ls .cache/ankigo/
+open .cache/ankigo/ankigo.db
+open .cache/ankigo/ankigo.db | get word
+open .cache/ankigo/ankigo.db | get words
+ankigo 
+ankigo -h
+ankigo get bung
+http get -r http://cht.sh/go/for?T 
+http get -r http://cht.sh/go/for?T | from xml 
+http get -r http://cht.sh/go/for?T l
+http get http://cht.sh/go/for?T
+ls
+touch delme.toml
+open delme.toml | insert testing "it's working!" | save delme.toml
+open delme.toml | insert testing "it's working!" | save
+open delme.toml | insert testing "it's working!" | save -f delme.toml
+open delme.toml
+cat delme.toml 
+bat delme.toml
+let year = (<\n>"01/01/2025" |<\n>parse "{day}/{month}/{year}" |<\n>get year<\n>)
+year
+print year
+$year
+mkdir $"(date now) + 1day | format date '%F') Report"
+ls
+ls -d
+ls -h
+ls | where type == dir
+mkdir $"((date now) + 1day | format date '%F')) Report"
+ls | where type == dir
+mkdir $"((date now) + 1day | format date '%F') Report"
+ls | where type == dir
+rm -h
+rm --trash `2025-01-02 Report/` `2025-01-02) Report/`
+ls | where type == 0KB
+date now |<\n>$in.day | <\n>format date '%F' |<\n>$"($in) Report" |<\n>mkdir $in
+date now |<\n>$in + 1day | <\n>format date '%F' |<\n>$"($in) Report" |<\n>mkdir $in
+ls `2025-01-02 Report/`
+cd Documents/
+ls
+ls | update name {|file| $file.name | str upcase }
+ls
+ls | update name {str upcase}
+[31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31] | range 0..5|math sum | do { $in + 25}
+[31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31] | range 0..0|math sum | do { $in + 25}
+0 | format date '%F'
+0/0/0 | format date '%F'
+'0/0/0' | format date '%F'
+time now
+^time
+date -h
+timeout 
+1..4..2
+1..10..3
+1..10
+1..2..10
+1..10 | first
+1..10 | last 
+1..10 | ..
+.. | echo
+date -h
+exit
+help format date  
+date now | format date "%s"
+date now | format date "%d"
+date now | format date "%s" | format date "%F"
+date now | format date "%s" | do { <\n>mut let  time = $in<\n>let seconds = time % 60<\n>time = time - seconds<\n>let minutes = time / 60<\n>let hour = minutes / 60<\n>print $hour : $minutes : $seconds <\n>}<\n>
+date now | format date "%s" | do { <\n>mut time = $in<\n>let seconds = time % 60<\n>time = time - seconds<\n>let minutes = time / 60<\n>let hour = minutes / 60<\n>print $hour : $minutes : $seconds <\n>}<\n>
+date now | format date "%s" | do { <\n>mut time = $in<\n>let seconds = time % 60<\n>$time = $time - seconds<\n>let minutes = $time / 60<\n>let hour = $minutes / 60<\n>print $hour : $minutes : $seconds <\n>}<\n>
+date now | format date "%s" | do { <\n>mut time = $in<\n>let seconds = $time mod 60<\n>$time = $time - seconds<\n>let minutes = $time / 60<\n>let hour = $minutes / 60<\n>print $hour : $minutes : $seconds <\n>}<\n>
+date now | format date "%s" | do { <\n>mut time = $in | into int <\n>let seconds = $time mod 60<\n>$time = $time - seconds<\n>let minutes = $time / 60<\n>let hour = $minutes / 60<\n>print $hour : $minutes : $seconds <\n>}<\n>
+date now | format date "%s" | do { <\n>mut time = $in | into int <\n>let seconds = $time mod 60<\n>$time = $time - $seconds<\n>let minutes = $time / 60<\n>let hour = $minutes / 60<\n>print $hour : $minutes : $seconds <\n>}<\n>
+date now | format date "%s" | do { <\n>mut time = $in | into int <\n>let seconds = $time mod 60<\n>$time = $time - $seconds<\n>let minutes = $time / 60<\n>let hour = $minutes / 60<\n>print $hour : $minutes : $seconds <\n>}<\n> 
+date now | format date "%s" | do { <\n>let all_seconds = $in | into int <\n>let seconds = $all_seconds mod 60<\n>let all_minutes = ($all_seconds - $seconds) / 60<\n>let minutes = $all_minutes mod 60<\n>let all_hours = ($all_minutes - $minutes) / 60<\n>print $all_hours : $minutes : $seconds <\n>}
+date now | format date "%s" | do { <\n>let all_seconds = $in | into int <\n>let seconds = $all_seconds mod 60<\n>let all_minutes = ($all_seconds - $seconds) / 60<\n>let minutes = $all_minutes mod 60<\n>let all_hours = ($all_minutes - $minutes) / 60<\n>let hour = $all_hours mod 24 <\n>print $hour : $minutes : $seconds <\n>}
+date now | format date "%s" | do { <\n>let all_seconds = $in | into int <\n>let seconds = $all_seconds mod 60<\n>let all_minutes = ($all_seconds - $seconds) / 60<\n>let minutes = $all_minutes mod 60<\n>let all_hours = ($all_minutes - $minutes) / 60<\n>let hour = $all_hours mod 24 <\n>let all_days = $hour / 24<\n>print $all_days $hour : $minutes : $seconds <\n>}
+date now | format date "%s" | do { <\n>let all_seconds = $in | into int <\n>let seconds = $all_seconds mod 60<\n>let all_minutes = ($all_seconds - $seconds) / 60<\n>let minutes = $all_minutes mod 60<\n>let all_hours = ($all_minutes - $minutes) / 60<\n>let hour = $all_hours mod 24 <\n>let all_days = $all_hours / 24<\n>print $all_days $hour : $minutes : $seconds <\n>}
+date now | format date "%s" | do { <\n>let all_seconds = $in | into int <\n>let seconds = $all_seconds mod 60<\n>let all_minutes = ($all_seconds - $seconds) / 60<\n>let minutes = $all_minutes mod 60<\n>let all_hours = ($all_minutes - $minutes) / 60<\n>let hour = $all_hours mod 24 <\n>let all_days = ($all_hours - $hour) / 24<\n>print $all_days $hour : $minutes : $seconds <\n>}
+date now | format date "%s" | do { <\n>let all_seconds = $in | into int <\n>let seconds = $all_seconds mod 60<\n>let all_minutes = ($all_seconds - $seconds) / 60<\n>let minutes = $all_minutes mod 60<\n>let all_hours = ($all_minutes - $minutes) / 60<\n>let hour = $all_hours mod 24 <\n>let all_days = ($all_hours - $hour) / 24 $all_days == 0) true else false
+date now | format date "%s" | do { <\n>let all_seconds = $in | into int <\n>let seconds = $all_seconds mod 60<\n>let all_minutes = ($all_seconds - $seconds) / 60<\n>let minutes = $all_minutes mod 60<\n>let all_hours = ($all_minutes - $minutes) / 60<\n>let hour = $all_hours mod 24 <\n>let all_days = ($all_hours - $hour) / 24<\n>$all_days == 0 }
+if true { false }
+if false { false } else { true }
+true and do {print "hello"}  or true
+help and
+1 and 0
+0  bit-and 1 
+0  bit-xor 1 
+ansi -h
+date now | format date "%s" | do { <\n>let all_seconds = $in | into int <\n>let seconds = $all_seconds mod 60<\n>let all_minutes = ($all_seconds - $seconds) / 60<\n>let minutes = $all_minutes mod 60<\n>let all_hours = ($all_minutes - $minutes) / 60<\n>let hour = $all_hours mod 24 <\n>let all_days = ($all_hours - $hour) / 24<\n>$all_days == 0 } | ast
+ast -h
+ast "date now | format date "%s" | do { <\n>let all_seconds = $in | into int <\n>let seconds = $all_seconds mod 60<\n>let all_minutes = ($all_seconds - $seconds) / 60<\n>let minutes = $all_minutes mod 60<\n>let all_hours = ($all_minutes - $minutes) / 60<\n>let hour = $all_hours mod 24 <\n>let all_days = ($all_hours - $hour) / 24<\n>$all_days == 0 } "
+banner
+ls
+cat delme.txt
+help bytes collect
+bytes delme.txt
+open delme.txt 
+open delme.txt | bytes
+open delme.txt | bytes build
+open delme.txt | into binary 
+let b1 = open delme.txt | into binary 
+let b2 = open delme.txt | into binary
+[$b1 $b2]
+[$b1 $b2] | into binary
+[$b1 $b2] | bites collect
+[$b1 $b2] | bytes collect
+[$b1 $b2] | bytes collect | save -f delme.txt 
+open delme.txt
+help commands | fzf
+metadata 
+metadata -h
+ls | metadata
+metadata  20-intel.conf
+metadata --help
+[$b1 $b2] | bytes collect | decode
+[$b1 $b2] | decode
+du
+du --help
+du
+[$b1 $b2] | decode
+[$b1 $b2] | bytes collect | decode
+[$b1 $b2] | bytes collect | decode | grid
+[$b1 $b2] | grid
+ls | grid
+gstat
+help gstat
+input
+ls | drop 
+ls 
+ls | drop | print $in
+ls | last
+ls -p | last 
+ls -l
+ls -l | last
+ls -la | last
+pwd | last
+pwd | describe
+def concat [f1, f2] {<\n>let b1 = open f1 | into binary<\n>let b2 = open f1 | into binary<\n>[$b1, $b2] | binary collect<\n>} 
+concat delme.txt delme.txt
+def concat [f1, f2] {<\n>let b1 = open f1 | into binary<\n>let b2 = open f2 | into binary<\n>[$b1, $b2] | binary collect<\n>} 
+concat delme.txt delme.txt
+cat delme.txt 
+concat ./delme.txt ./delme.txt
+open delme.txt
+def concat [f1, f2] {<\n>print f1 f2<\n>let b1 = open f1 | into binary<\n>let b2 = open f2 | into binary<\n>[$b1, $b2] | binary collect<\n>}
+open delme.txt
+concat ./delme.txt ./delme.txt
+def concat [f1, f2] {<\n>print f1 f2<\n>let b1 = open $f1 | into binary<\n>let b2 = open $f2 | into binary<\n>[$b1, $b2] | binary collect<\n>}
+concat ./delme.txt ./delme.txt
+def concat [f1, f2] {<\n>print f1 f2<\n>let b1 = open $f1 | into binary<\n>let b2 = open $f2 | into binary<\n>[$b1, $b2] | binaries collect<\n>}
+def concat [f1, f2] {<\n>print f1 f2<\n>let b1 = open $f1 | into binary<\n>let b2 = open $f2 | into binary<\n>[$b1, $b2] | bytes collect<\n>}
+concat ./delme.txt ./delme.txt
+def concat [f1, f2] {<\n>print f1 f2<\n>let b1 = open $f1 | into binary<\n>let b2 = open $f2 | into binary<\n>[$b1, $b2] | bytes collect | encode<\n>}
+help encode
+def concat [f1, f2] {<\n>print f1 f2<\n>let b1 = open $f1 | encode base64<\n>let b2 = open $f2 | encode base64<\n>[$b1, $b2] | bytes collect | decode<\n>}
+def concat [f1, f2] {<\n>print f1 f2<\n>let b1 = open $f1 | into binary <\n>let b2 = open $f2 | into binary<\n>[$b1, $b2] | bytes collect | decode<\n>}
+concat ./delme.txt ./delme.txt
+def concat [f1, f2] {<\n>let b1 = open $f1 | into binary <\n>let b2 = open $f2 | into binary<\n>[$b1, $b2] | bytes collect | decode<\n>}
+concat ./delme.txt ./delme.txt
+help for
+<\n>def concat [...args] {<\n>for f in $args { print $f}<\n>}<\n>
+concat ./delme.txt ./delme.txt
+def concat [...args] {<\n>let file: byte[] = []<\n>for f in $args { print $f<\n>open $f | into binary | append $file<\n>}<\n>$file<\n>}<\n>
+def concat [...args] {<\n>let file: any[] = []<\n>for f in $args { print $f<\n>open $f | into binary | append $file<\n>}<\n>$file<\n>}<\n>
+def concat [...args] {<\n>let file = []<\n>for f in $args { print $f<\n>open $f | into binary | append $file<\n>}<\n>$file<\n>}<\n>
+concat ./delme.txt ./delme.txt
+def concat [...args] {<\n>let file = []<\n>for f in $args { print $f<\n>open $f | into binary | print $in<\n>}<\n>$file<\n>}<\n>
+concat ./delme.txt ./delme.txt
+def concat [...args] {<\n>let file = []<\n>for f in $args { print $f<\n>open $f | into binary | insert $file<\n>}<\n>$file<\n>}<\n>
+def concat [...args] {<\n>let file = []<\n>for f in $args { print $f<\n>open $f | into binary | append<\n>}<\n>$file<\n>}<\n>
+ls table
+ls | table
+ls | table | describe
+help table
+config nu
+start delme.toml
+$nu.env.TERM = ghostty
+$nu.env.TERM=ghostty
+$nu.env.TERM = "ghostty"
+help env
+cat .config/nushell/env.nu
+bat .config/nushell/config.nu 
+$env.TERM = ghostty
+$env.TERM = "ghostty"
+start delme.toml
+mktemp --help
+rm del*
+ls | glob "del*"
+ls | where { $in.name | str starts-with del}
+ls
+temp tobedeleted.nu
+mktemp tobedeleted.nu
+help mktemp
+mktemp -d | cd
+ls
+mktemp -d | cd $in
+ls
+cd ..
+ls
+cd tmp.YaW2VywqsY/
+touch test.lua
+cal
+seq
+seq -h
+seq date -h
+hash -h
+"password" | hash sha256 
+"password" | hash md5
+history session
+history -h
+history
+random
+random dice
+z 
+kitten icat Pictures/keyboard-layout.png
+start -h
+zellij
+zellij -h
+exit
+ls
+ls -r
+ls | to text
+ls
+^ls
+exa
+lf
+alias ls = exa
+ls
+help alias
+help commands | to text | fxf
+help commands | to text | fzf
+help commands | fzf
+help aliases
+zi -h
+$env.config.edit_mode = 'vi'<\n>
+config nu
+exit
+t
+exit
+stat 
+stat --printf %f yay
+stat --printf %f yay | into binary
+stat yay
+ghostty +list-keybinds | grep "toggle"
+pwd
+ls
+ansi cls 
+ansi clsb
+ansi home
+if $nu.history-enabled { open $nu.history-path | lines | uniq --count | sort-by --reverse count | first 5 | rename command amount } else { print --stderr "History is disabled!" }
+if $nu.history-enabled { open $nu.history-path | lines | uniq --count | sort-by --reverse count | first 20 | rename command amount } else { print --stderr "History is disabled!" }
+(http get https://api.chucknorris.io/jokes/random).value
+(http get https://api.chucknorris.io/jokes/random)
+(http get https://api.chucknorris.io/api<\n>)
+help list
+[foo, bar, baz]
+[foo bar bax]
+[foo<\n>bar boom<\n>bax<\n>]
+[foo bar, boom, box bundle]
+help par-eavh
+help par-each
+[{name: joao, job: carpenter}, {name: lucas, job: officer}]
+help commands | where category == filters
+help commands | where category == filters | explore
+help stream
+1..10| par-each {print $in}
+ls -lsn
+help tree
+help ls
+ls
+z nki
+ls
+ls | sort-by size
+ls | sort-by size | roll down 
+help sort
+help sort-by
+ls | sort-by size --reverse
+ls | order-by type
+ls | select name size
+ls | select name size | sort-by size | first 5
+ls | select name size | sort-by size | take 5
+help take
+ls | sort-by name | select 5
+ls | sort-by name | get 5
+ls | sort-by name | get #
+ls | sort-by name | select #
+ls | sort-by name | select -1
+ls | sort-by name | get name
+let first = [[a b] [1 2]]
+let second = [[a b] [3 4]]
+$first | append $second
+second
+$second
+let third = [[a c] [3 4]]
+$first | append $second | append $third
+let first = [[a b]; [1 2]]
+let second = [[a b]; [3 4]]
+let third = [[a c] [3 4]]
+$first | append $second | append $third
+let third = [[a c]; [3 4]]
+$first | append $second | append $third
+sessreg 
+help session
+first
+let first = [[a b]; [1 2]]
+let third = [[a c]; [3 4]]
+let second = [[a b]; [3 4]]
+$first ++ $second ++ $third
+$first | merge $second
+$first | merge $second | merge $third
+[$first $second $third] | reduce {|el, acc| acc | merge $el}
+[$first $second $third] | reduce {|el, acc| $acc | merge $el}
+ls
+mktemp -d | cd $in
+touch test.js
+open test.js | insert work "yes it worked"
+open test.json | insert work "yes it worked"
+mv test.js test.js
+mv test.js test.json
+open test.json | insert work "yes it worked"
+echo {}
+echo "{}"
+echo "{}" | save -f test.json
+bat test.json 
+open test.json
+open test
+open test.json | table
+open test.json | insert work "yes it worked"
+bat test.json
+open test.json | insert work "yes it worked" | save -f 
+open test.json | insert work "yes it worked" | save -f test.json
+bat test.json
+exit
+ls
+ls | move size --before name
+ls | select name inode
+ls -l | select name inode
+ls -l | select name tag
+ls | enumarate
+ls | enumerate
+ls | enumerate | describe
+ls -l | describe
+ls -l | enumerate | flatten
+ls -l | select 1
+ls -l | select 0
+ls -l | enumerate | flatten | select index
+ls -l | enumerate | flatten | select index | flatten
+ls -l
+ls -l | table -e
+scope modules
+scope modules | table -e
+use std/dirs
+dirs add
+x 
+z type
+ls
+dirs add
+dirs nec
+dirs next
+dirs prev
+dirs 
+cd
+dirs add
+dirs
+dirs Documents/Codes/chrome-extensions/
+dirs add Documents/Codes/chrome-extensions/
+dirs
+dirs nec
+dirs next
+cd ..
+dirs
+ls g 1
+g 1
+ls -h
+ls -a **/*
+ls -a **a
+ls -a **/* --threads
+btop
+t
+mktemp -d | cd $in
+git init 
+ls
+touch content.md
+"this is a content" | save --append content.md
+cat content.md 
+ls
+git add .
+git commit -m "first commit"
+ls -la
+cd .git 
+ls
+cd objects/
+ls
+git log --one-line
+git log --oneline 
+git cat-file 370844e
+git cat-file -p  370844e
+git cat-file -p 9964c2
+git cat-file -p 99646c
+git cat-file -p 103d55
+"title1 \n title 2 \n title 3 \n title 4 \n"
+"title1 \n title 2 \n title 3 \n title 4 \n" | save -f "B: add Titles.md"
+mv `B: add Titles.md` titles.md
+open titles.md
+git log
+git status
+ls
+mv titles.md ../../
+dirs add .
+use std/dirs
+dirs add .
+dirs
+dirs drop 0
+dirs drop .
+dirs drop --help
+dirs drop 0
+dirs drop nth 0
+dirs drop
+dirs
+dir ../../
+dirs
+dirs add
+dirs
+dirs add ../../
+ls
+git status
+gits add titles.md
+git add titles.md 
+git commit -m "B: Add titles.md"
+exit
+yazi --cwdfile | echo
+yazi --cwdfile /dev/stout
+yazi --cwd-file /dev/stout
+yazi --cwd-file /dev/stdout
+yazi --cwd-file temfile.del
+rebiit
+reboot
+z conf
+z nushell/
+z ls
+z ..
+z -
+z nushell
+z conf.d/
+ls
+$env.HOME
+$env.YAZI = $env.HOME
+$env.YAZI
+yazi --help
+yazi --cwd-file /dev/stdout
+echo "rererh; " > /dev/stdout
+exit
+yazi --cwd-file /dev/stdout 
+df -T
+ranger --help
+nvim yazi.nu
+help executable
+help if
+command cd
+which g
+which cd
+which nvim
+which nvim | $in.sixe
+which nvim | $in.size
+which nvim | length 
+which g | length 
+which g | length | do {$in > 0}
+which --help
+where nvim
+find nvim
+help location
+ls
+y
+exit
+y
+z conf.d
+nvim cd ..
+..
+ls
+nvim config.nu 
+exit
+z conf.d
+cd ~/.config/nushell
+ls
+cat confd
+ls confd
+cat history.txt
+open history.txt | lines | count
+open history.txt | lines
+open history.txt | index 1
+open history.txt | columnns
+open history.txt | lines | columns 
+open history.txt | lines 
+open history.txt | lines | table
+open history.txt | lines | table | index
+open history.txt | lines | table | columns 
+open history.txt | lines
+y
+echo not true
+eval not tru
+eval not true
+if !true { return right} else { return wrong }
+if not 0 { return right} else { return wrong }
+if not true { return right} else { return wrong }
+if not true { right} else { wrong }
+if not true { "righlt"} else { "wrong" }
+find zoxide.nu
+find --help
+fd 
+fd zoxide
+((which zoxide | lenght) > 0) and ($"($nu.default-config-dir)/conf.d/zoxide.nu" | path exists) 
+((which zoxide | length) > 0) and ($"($nu.default-config-dir)/conf.d/zoxide.nu" | path exists) 
+exit
+reset
+z
+reset
+z
+nvim config.nu
+source config.nu
+y
+if z
+z
+which z
+zoxide /home/
+which zoxide z
+alias --help
+alias
+cat .config/nushell/env.nu 
+bat .config/nushell/conf.d/zoxide.nu 
+zoxide __zoxide_z /home
+zoxide --help 
+bat .config/nushell/conf.d/zoxide.nu 
+zi
+bat .config/nushell/conf.d/zoxide.nu 
+which [zoxide, z]
+source .config/nushell/conf.d/zoxide.nu
+source .config/nushell/conf.d/yazi.nu
+y
+zi 
+ls
+zi
+zi 
+z home
+ls
+z lucio
+ls
+help default
+$enb
+$env
+$env | get MY_ENV
+$env | get MY_ENV --ignore-errors
+ls
+exa
+ls --raw
+uuidgen
+lsg
+ls | sort-by type name -i | grid -c | str trim
+ls | sort-by type name -i | str trim
+ls | sort-by type name -i | grid -b
+ls | sort-by type name -i | grid -cs |str trim
+ls | sort-by type name -i | grid -cs no |str trim
+ls | sort-by type name -i | grid -cs   |str trim
+ls | sort-by type name -i | grid -cs :  |str trim
+ls | sort-by type name -i | grid -cs " "  |str trim
+ls | sort-by type name -i | grid -cs "  "  |str trim
+ls | sort-by type name -i | grid -cs "    "  |str trim
+ls | sort-by type name | grid -cs "    "  |str trim
+ls | sort-by type name -i | grid -cs "    "  |str trim
+alias lsg = ls | sort-by type name -i | grid -cs "    "  |str trim
+alias lsg = ls | sort-by type name -i | grid -cs "    "  | str trim
+alias lsg = "ls | sort-by type name -i | grid -cs \"    \"  | str trim"
+alias lsg = ls | sort-by type name -i | grid -cs '   '  | str trim
+ls | sort-by type name -i | grid -cs '   '  | str trim
+alias lsg = {ls | sort-by type name -i | grid -cs '   '  | str trim}
+scope 
+scope aliases
+scope variables
+scope commands
+scope commands | select name
+zip -h
+glob *.txt
+glob -h
+glob **/*.txt
+fzf **/*.txt
+tldr fzf
+tldr sk
+sk --query "**/*.txt"
+packan -Ss sk
+pacman -Ss sk
+sudo pacman -S sk
+sudo pacman -Sh
+sudo pacman -Ssh
+sudo pacman -Ss "^sk"
+sudo pacman -S skim
+sk --query "**/*.txt"
+sk --query "txt$"
+time sk --query "txt$"
+exit
+cargo install nu_plugin_skim
+asdf 
+"\n$env.ASDF_DIR = ($env.HOME | path join '.asdf')\n source " + ($env.HOME | path join '.asdf/asdf.nu') | save --append $nu.config-path
+reset
+exit
+nvim /home/lucio/.asdf/asdf.nu
+exit
+nvim /home/lucio/.asdf/asdf.nu
+exit
+NVIM_APPNAME=lazyvom ^nvim
+NVIM_APPNAME = lazyvom ^nvim .asdf/asdf.nu
+NVIM_APPNAME=lazyvim ^nvim .asdf/asdf.nu
+exit
+NVIM_APPNAME=lazyvim ^nvim .asdf/asdf.nu
+config nu
+NVIM_APPNAME=lazyvim ^nvim .config/nushell/config.nu
+NVIM_APPNAME=lazyvim ^nvim .config/nushell/conf.d/asdf.nu
+exit
+help path join
+$env.HOME | path join spam
+$env.HOME | path join spam logic
+$env.HOME | path join spam logic txt
+NVIM_APPNAME=lazyvim ^nvim .asdf/asdf.nu
+exit
+$env.PATH
+$env.PATH | split row (char esep)
+char esep
+exit
+asdf shim
+asdf reshim
+asdf env
+asdf env --h
+asdf env --help
+exit
+nu
+exit
+asdf reshim
+cat .tool-versions 
+exit
+cargo install nu_plugin_skim
+sk --query "txt$"
+cargo --help
+cargo --list
+ls
+cd bin/
+ls
+cd ..
+sk --help
+sk -f --help
+sk cargo
+sk 'cargo'
+sk -q cargo
+tldr sk
+fd -d cargo
+fd cargo
+which tauri
+tauri
+fd  nu_plugin_skim
+exit
+cargo install nu_plugin_skim
+which nu_plugin_skim
+fd nu_plugin_skim
+tldr fd
+plugin add --help
+history
+cargo install nu_plugin_skim
+cargo config 
+cargo config  -v
+cargo config  carog
+cargo config  cargo
+cargo config  home
+ls -lad
+ls -d
+exit
+history
+cargo install nu_plugin_skim
+cargo run nu_plugin_skim
+asdf where cargo
+asdf where rust 
+cd /home/lucio/.asdf/installs/rust/1.80.0/
+ls
+exa bin/
+plugin add bin/nu_plugin_skim
+sk -q cargo
+ps | sk --format {get name} --preiew
+ps | sk
+ps | get name | sk
+ps | get name | sk --format --preview {} 
+ps | get name | sk --preview {} 
+t
+exit
+ps | sk --format {get name} --preview {}
+ls | sk --format {get name} --preview {}
+sk --help
+ls | sk --format {get name} --preview {|x| cat x}
+ls | sk --format {get name} --preview {|| cat}
+ls | sk --format {get name} --preview {|| cat $in}
+ls | sk --format {get name} --preview {|| bat $in}
+ls | sk --format {get name} --preview {|| print $in}
+n
+(ls)
+let a = if true { 1 } else { 3 }
+a
+$a
+let a = (if true { 1 } else { 3 })
+$a
+let a = (if true { 1 } else { 3 } | $in + 1)
+$a
+let a = ((if true { 1 } else { 3 }) | $in + 1)
+$a
+$env.PATH
+$env.PATH | split row (char esep)
+$env.PATH | split row (char esep) | par-each { ls $in }
+$env.PATH | split row (char esep) | each { ls $in }
+ls .config/carapace/bin
+$env.PATH | split row (char esep) | each { ls $in --ignore-errors }
+$env.PATH | split row (char esep) | each { ls $in --ignore-error }
+$env.PATH | split row (char esep) | each { if ($in | path exists) { s $in } } 
+$env.PATH | split row (char esep) | each { if ($in | path exists) { ls $in } } 
+$env.PATH | split row (char esep) | each { if ($in | path exists) { ls $in } } | collect  
+$env.PATH | split row (char esep) | each { if ($in | path exists) { ls $in } } | collect | flatten 
+help flatten
+$env.PATH | split row (char esep) | each { if ($in | path exists) { ls $in } } | flatten 
+exit
+NVIM_APPNAME=lazyvim ^nvim .asdf/asdf.nu
+exit
+use std/log
+log "hello my hola"
+log info "hello my hola"
+log error "oops something went wrong!"
+log debug 'some info for you'
+help log debug
+ls | log debug info
+ls | lod debug $in
+ls | log debug $in
+ls | log debug profile
+ls | log debug _Video/
+ps | sk --format {get name} --preview {}
+ls | to json
+ls | to json | from json
+ls | to toml
+ls | to yaml
+use std/formats
+ls | to formats jsonl 
+use std/formats *
+ls | to jsonl
+use std/math PI
+$PI
+alias ls = exa
+ls
+hide ls
+ls
+hide ls
+ls
+show ls
+use std/ls
+use std/*
+use std 
+ls
+help hide
+hide ls
+ls
+which ls
+exit
+overlay list 
+overlay list
+help overlay
+git --help
+exit
+use std/dirs
+dirs 
+z type
+dirs
+dirs add .
+dirs
+dirs next
+cd /home/lucio
+dirs
+dirs next
+cd ..
+dirs
+dirs next
+z lucio
+ls
+dirs next
+help dirs
+dirs --help
+g
+use std/log
+log info "hello my hole"
+log error "oops something went wrong!"
+log warning "be carefull something could go wrong!"
+log critical "This is critical, you will explode your computer!"
+ls
+ls | grid
+grid --help
+ls | to json
+ls -la | to json
+ls .config/nushell/
+cd .config/nushell/conf.d/
+ls
+touch mod.nu
+cd ..
+ls
+exit
+z
+exit
+nvim .config/nushell/config.nu
+exit
+rm .config/nushell/conf.d/mod.nu
+exit
+nvim .config/nushell/config.nu
+exit
+nvim config.nu 
+ls conf.d/
+dirs 
+use std/dirs
+nvim config.nu
+exit
+dirs .config/nvim
+dirs add .config/nvim/
+dirs
+da 
+1..10| each {||}
+1..10
+overlay list
+overlay use zero
+cd 
+overlay use test.nu 
+foo
+overlay list
+overlay use test.nu 
+overlay use test
+foo
+baz
+gr
+use test.nu 
+foo
+overlay use test
+foo
+test 
+help test
+exit
+mv test.nu ttt.nu
+use ttt
+overlay use ttt.nu 
+foo
+ttt
+overlay use ttt
+foo
+help overlay
+overlay list
+overlay new
+overlay new ttt.nu
+overlay list
+overlay use ttt.nu 
+foo
+baz
+nvim test.nu
+rm test.nu
+ls
+rm ttt.nu
+ls
+alias lls = ^ls
+lls
+exit
+;q;q
+exit
+chezmoi edit
+chezmoi --help
+exit
